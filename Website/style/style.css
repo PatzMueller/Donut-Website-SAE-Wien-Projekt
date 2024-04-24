@@ -32,6 +32,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
+  /* background-size: cover; */
   padding: 0 3rem 0 3rem;
 }
 
@@ -273,6 +274,7 @@ a {
   background-image: url(../img/h2-background-img-1.png);
   background-repeat: no-repeat;
   background-position: center;
+  /* background-size: cover; */
 }
 .container .contents-wraper {
   width: 70%;
@@ -404,7 +406,7 @@ a {
 
 /* FAQ */
 .footer-faq {
-  min-height: 60vh;
+  min-height: 50vh;
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -477,7 +479,7 @@ svg {
 /* Contact Form */
 
 .contact-section {
-  padding: 10em;
+  padding: 10em 15em;
   display: flex;
   flex-direction: column;
   gap: 7em;
@@ -492,21 +494,31 @@ h2 {
 
 .contact-section .section-content {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  gap: 10em;
+}
+
+@media (max-width: 1570px) {
+  .contact-section {
+    padding: 10em 5em;
+  }
+  .contact-section .section-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Contact form */
-form {
+#contact-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.75em;
-  max-width: fit-content;
+  max-width: 100%;
 }
 
-form input,
-form textarea {
+#contact-form input,
+#contact-form textarea {
   border: none;
   border-bottom: 0.5px #ffffff solid;
   padding-block: 1em;
@@ -516,12 +528,12 @@ form textarea {
   font-weight: 100;
   font-size: 1rem;
 }
-form input:focus,
-form textarea:focus {
+#contact-form input:focus,
+#contact-form textarea:focus {
   border: 0.5px solid #ffffff;
 }
-form input::placeholder,
-form textarea::placeholder {
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
   color: #ffffff;
 }
 
@@ -537,7 +549,7 @@ form textarea::placeholder {
   font-family: "basic-sans", sans-serif;
 }
 
-form > button {
+#contact-form > button {
   margin-top: 3em;
   cursor: pointer;
   width: 50%;
@@ -550,7 +562,7 @@ form > button {
   font-size: 1rem;
 }
 
-form > button:hover {
+#contact-form > button:hover {
   color: #2d1a13;
   background-color: #ffffff;
 }
@@ -571,6 +583,7 @@ h3 {
 
 .contact-info > p {
   max-width: 60ch;
+  font-size: 1rem;
 }
 
 .info-container {
@@ -581,10 +594,18 @@ h3 {
   gap: 2.5em;
 }
 
+@media (max-width: 715px) {
+  .info-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .info-container > div {
   display: flex;
   align-items: center;
   gap: 2.5em;
+  font-size: 1rem;
 }
 
 .info-container img {
