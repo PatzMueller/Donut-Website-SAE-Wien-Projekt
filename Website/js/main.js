@@ -84,10 +84,10 @@ faqs.forEach((faq) => {
 
 //Contact-form validation
 
-const contactForm = document.querySelector("#contact-form");
-const messageInput = document.querySelector("#message-input");
-const fullNameInput = document.querySelector("#full-name-input");
-const emailInput = document.querySelector("#email-input");
+const contactForm = document.getElementById("contact-form");
+const messageInput = document.getElementById("message-input");
+const fullNameInput = document.getElementById("full-name-input");
+const emailInput = document.getElementById("email-input");
 
 // Setting error message
 function displayError(input, error) {
@@ -106,42 +106,52 @@ function displaySuccess(input) {
 }
 
 // Checking emailInput for valid email adress
-function validateEmail(email) {
+function validateEmail() {
+  const emailValue = emailInput.value.trim();
   const regex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return regex.test(String(email).toLowerCase());
-}
+  let isValid = regex.test(String(emailValue).toLowerCase());
 
-// Checking inputs for valid values and displaying error messages
-function validateInputs() {
-  const messageValue = messageInput.value;
-  const fullNameValue = fullNameInput.value.trim();
-  const emailValue = emailInput.value.trim();
-
-  // Checking first name
-  if (fullNameValue === "" || fullNameValue === null) {
-    displayError(fullNameInput, "please enter your name");
-  } else {
-    displaySuccess(fullNameInput);
-  }
-  // Checking email
-  if (emailValue === "" || emailValue === null) {
+  if (!emailValue) {
     displayError(emailInput, "please enter your email");
-  } else if (!validateEmail(emailValue)) {
+  } else if (!isValid) {
     displayError(emailInput, "please enter a valid email");
   } else {
     displaySuccess(emailInput);
   }
-  // Checking phone number
-  if (messageValue === "" || messageValue === null) {
+}
+
+// Checking fullName for valid input
+function validateFullName() {
+  const fullNameValue = fullNameInput.value;
+
+  if (!fullNameValue) {
+    displayError(fullNameInput, "please enter your name");
+  } else {
+    displaySuccess(fullNameInput);
+  }
+}
+
+// Checking message for valid input
+function validateMessage() {
+  const messageValue = messageInput.value;
+
+  if (!messageValue) {
     displayError(messageInput, "please enter your message");
   } else {
     displaySuccess(messageInput);
   }
 }
 
-// Handling form submission
+// Handling validation on submitting form
 contactForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  validateInputs();
+  validateMessage();
+  validateFullName();
+  validateEmail();
 });
+
+// Handling validation on changing inputs
+fullNameInput.addEventListener("input", validateFullName);
+emailInput.addEventListener("input", validateEmail);
+messageInput.addEventListener("input", validateMessage);
