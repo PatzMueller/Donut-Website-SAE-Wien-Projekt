@@ -23,6 +23,7 @@ body {
   font-weight: 300;
   background-color: var(--main-gb-color);
   transition: 2s;
+  color: var(--main-font-color);
 }
 
 header {
@@ -197,6 +198,40 @@ a {
 
 .header-titel-bottom img {
   padding-top: 2rem;
+}
+
+/* Selection */
+.selection {
+  display: flex;
+  padding-block: 5em;
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  flex-direction: column;
+  margin-inline: auto;
+}
+
+.selection h3 {
+  color: var(--sec-font-color);
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.product p:last-child {
+  margin-top: 0.75em;
+}
+
+.selection-img {
+  height: 1000px;
 }
 
 /* Deco img Top */
