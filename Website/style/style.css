@@ -241,6 +241,9 @@ a {
   display: flex;
   border-block: 0.5px solid var(--main-font-color);
   justify-content: space-between;
+  background-image: url(../img/h2-background-img-1.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .services > div {
