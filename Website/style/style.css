@@ -257,15 +257,59 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.75em;
-}
-
-.services .text p {
   max-width: 35ch;
 }
 
 .services .text p:first-child {
   font-weight: 500;
   font-size: 1.5rem;
+}
+
+/* History */
+
+.history {
+  padding-block: 15em;
+  display: flex;
+  flex-direction: column;
+  gap: 20em;
+  position: relative;
+}
+
+.history > img {
+  width: 350px;
+  position: absolute;
+  right: 30%;
+  top: 20%;
+}
+
+.history h3 {
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+.history .content {
+  display: flex;
+  align-items: center;
+}
+
+.history .text {
+  display: flex;
+  flex-direction: column;
+  max-width: 50ch;
+  margin-inline: auto;
+  gap: 3em;
+}
+
+.history .text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.history .text p:first-child {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 /* Deco img Top */
