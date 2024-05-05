@@ -793,3 +793,28 @@ h4 {
 .info-container img {
   width: 1.5em;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10em;
+}
+
+.footer .footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.footer .footer-item > p {
+  text-transform: uppercase;
+}
+
+.footer .footer-item > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .logo {
+  margin-block: auto;
+}
