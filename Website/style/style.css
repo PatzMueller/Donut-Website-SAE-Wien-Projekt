@@ -314,7 +314,7 @@ a {
 .history .text {
   display: flex;
   flex-direction: column;
-  max-width: 50ch;
+  max-width: 75ch;
   margin-inline: auto;
   gap: 3em;
   padding: 5em;
@@ -330,6 +330,55 @@ a {
   font-weight: 500;
   font-size: 1.5rem;
   text-transform: uppercase;
+}
+
+/* Founder */
+
+.founder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10em;
+  flex-wrap: wrap;
+}
+
+.founder-img {
+  width: 100%;
+  max-width: 650px;
+}
+
+.founder .text {
+  display: flex;
+  flex-direction: column;
+  max-width: 75ch;
+  gap: 3em;
+  padding: 10em 5em;
+}
+
+.founder .heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.founder .text p:first-child {
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.founder .signature {
+  max-width: 150px;
+}
+
+.founder .awards {
+  display: flex;
+  gap: 3em;
+  align-items: center;
+}
+
+.founder .awards img {
+  width: 75px;
 }
 
 /* Deco img Top */
