@@ -204,6 +204,8 @@ a {
 .selection {
   display: flex;
   padding-block: 5em;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .product-container {
@@ -213,6 +215,7 @@ a {
   gap: 3em;
   flex-direction: column;
   margin-inline: auto;
+  padding: 3em;
 }
 
 .selection h3 {
@@ -231,19 +234,22 @@ a {
 }
 
 .selection-img {
-  height: 1000px;
+  width: 100%;
+  max-width: 720px;
 }
 
 /* Services */
 
 .services {
-  padding: 15em 5em;
+  padding: 10em 5em;
   display: flex;
   border-block: 0.5px solid var(--main-font-color);
-  justify-content: space-between;
   background-image: url(../img/h2-background-img-1.png);
   background-position: center;
   background-size: cover;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 3em 0;
 }
 
 .services > div {
@@ -278,21 +284,31 @@ a {
   position: relative;
 }
 
-.history > img {
-  width: 350px;
-  position: absolute;
-  right: 30%;
-  top: 20%;
-}
-
 .history h3 {
   max-width: fit-content;
   margin-inline: auto;
+  position: relative;
+}
+
+.history h3::after {
+  content: url(../img/inner-p-img-3.png);
+  width: 350px;
+  left: 200px;
+  top: 20px;
+  position: absolute;
+  display: none;
 }
 
 .history .content {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.history-img {
+  width: 100%;
+  max-width: 720px;
 }
 
 .history .text {
@@ -301,6 +317,7 @@ a {
   max-width: 50ch;
   margin-inline: auto;
   gap: 3em;
+  padding: 5em;
 }
 
 .history .text > div {
