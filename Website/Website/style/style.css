@@ -18,6 +18,10 @@
     --sec-font-color: #E09034;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: basic-sans, sans-serif;
     font-weight: 300;
@@ -184,6 +188,12 @@ a:hover:after{
     cursor: pointer;
     z-index: 999;
     font-size: 1rem;
+    transition: all 250ms ease-in-out;
+}
+
+#dark:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: grey;
 }
 
 /* Header Titel */
