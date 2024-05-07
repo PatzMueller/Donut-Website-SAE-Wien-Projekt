@@ -500,9 +500,13 @@ header .logo img{
     width: 60%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
     .slider {
         flex-direction: column;
+        gap: 4rem;
+        margin-top: 6rem;
+        width: 100%;
+        padding: 0 4rem 0 4rem;
     }
 }
 
@@ -532,7 +536,7 @@ header .logo img{
 
 .slider-icon {
     display: flex;
-    gap: 2em;
+    gap: 5rem;
     margin-top: 3rem;
 }
 
