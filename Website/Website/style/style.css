@@ -922,7 +922,7 @@ header .logo img{
 }
 
 .faq {
-    max-width: 700px;
+    width: 75ch;
     margin-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--main-font-color);
