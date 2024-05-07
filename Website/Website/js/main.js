@@ -21,13 +21,13 @@
  //Slider Donut
 let i = 0; 			
 let images = [];	
-let time = 2000;	
+let time = 1000;	
 	 
 // Image List
-images[0] = "img/Donut-in-the-kitchen.jpg";
-images[1] = "img/Donut-for-breakfast.jpg";
-images[2] = "img/Donuts-shop.jpg";
-images[3] = "img/Donuts-width-chocolate-filling.jpg";
+images[0] = "img/Donuts-with-chocolate-filling.jpg";
+images[1] = "img/Donut-in-the-kitchen.jpg";
+images[2] = "img/Donut-for-breakfast.jpg";
+images[3] = "img/Donuts-shop.jpg";
 
 
 function changeImg(){
