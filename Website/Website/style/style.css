@@ -35,7 +35,7 @@ header{
     background-image: url(../img/h2-background-img-1.png);
     background-position: center;
     background-repeat: no-repeat;
-    object-fit: cover;
+    background-size: cover;
     padding: 0 3rem 0 3rem;
 }
 
@@ -94,8 +94,9 @@ a:hover:after{
     font-size: 1rem;
 }
 /* Logo */
-.logo img{
-    width: 50%;
+header .logo img{
+    width: 75px;
+    margin-top: 50px;
 }
 
 /* Navigation */
@@ -369,6 +370,7 @@ a:hover:after{
     background-image: url(../img/h2-background-img-1.png);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
     margin-top: 3rem;
 }
 
@@ -634,8 +636,9 @@ a:hover:after{
     background-image: url(../img/h2-background-img-1.png);
     background-repeat: no-repeat;
     background-position: center;
-    
+    background-size: cover;
 }
+
 .container-testimonial .contents-wraper{
     width: 70%;
     min-height: inherit;
@@ -1000,6 +1003,7 @@ footer {
     background-image:url(../img/h2-background-img-1.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .footer-bottom {
     width: 100%;
@@ -1017,12 +1021,9 @@ footer {
 }
 
 /* Footer Logo */
-.footer-logo {
-    margin-top: 2rem;
-}
 
-.footer-logo img {
-    width: 40px;
+footer .logo img {
+    width: 75px;
 }
 
 @media screen and (max-width: 1000px){
