@@ -79,6 +79,10 @@ a:hover:after{
     .top-header{
         display: none;
     }
+
+    header {
+       padding: 0 2rem 0 2rem;
+    }
 }
 
 .top-header ul{
@@ -95,14 +99,16 @@ a:hover:after{
 }
 /* Logo */
 header .logo img{
-    width: 75px;
-    margin-top: 50px;
+    width: 50px;
 }
+
+
 
 /* Navigation */
 .navbar {
     width: 100%;
-    height: 100px;
+
+    padding-block: 1em;
     max-width: 100%;
     margin: 0 auto;
     display: flex;
@@ -111,8 +117,8 @@ header .logo img{
 }
 
 .navbar .logo{
-    font-size: 1.5rem;
     font-weight: bold;
+    height: fit-content;
 }
 
 .navbar .links{
@@ -140,10 +146,11 @@ header .logo img{
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 99999;
 }
 
 .dropdown-menu.open{
-    height: 200px;
+    height: 175px;
 }
 
 .dropdown-menu li {
@@ -372,6 +379,7 @@ header .logo img{
     background-position: center;
     background-size: cover;
     margin-top: 3rem;
+    padding-inline: 2em;
 }
 
 @media screen and (max-width: 880px){
@@ -492,6 +500,12 @@ header .logo img{
     width: 60%;
 }
 
+@media screen and (max-width: 1000px) {
+    .slider {
+        flex-direction: column;
+    }
+}
+
 .slider-img{
     width: 100%;
 }
@@ -518,7 +532,7 @@ header .logo img{
 
 .slider-icon {
     display: flex;
-    gap: 5rem;
+    gap: 2em;
     margin-top: 3rem;
 }
 
@@ -922,7 +936,8 @@ header .logo img{
 }
 
 .faq {
-    width: 75ch;
+    max-width: 75ch;
+    width: 100%;
     margin-top: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--main-font-color);
@@ -1005,6 +1020,7 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .footer-bottom {
     width: 100%;
     display: flex;
@@ -1027,9 +1043,13 @@ footer .logo img {
 }
 
 @media screen and (max-width: 1000px){
+    footer {
+        padding-block: 2em;
+    }
+
     .container-footer{
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
         height: 70vh;
     }
