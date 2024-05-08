@@ -1,117 +1,101 @@
+//Mobile Nav
+const toggleBtn = document.querySelector(".toggle-btn");
+const toggleBtnIcon = document.querySelector(".toggle-btn i");
+const dropDownMenu = document.querySelector(".dropdown-menu");
 
- //Mobile Nav
- const toggleBtn = document. querySelector(".toggle-btn")
- const toggleBtnIcon = document. querySelector(".toggle-btn i")
- const dropDownMenu = document. querySelector(".dropdown-menu")
+toggleBtn.onclick = function () {
+  dropDownMenu.classList.toggle("open");
+  const isOpen = dropDownMenu.classList.contains("open");
 
- toggleBtn.onclick = function () {
-     dropDownMenu.classList.toggle("open")
-     const isOpen = dropDownMenu.classList.contains("open")
+  toggleBtnIcon.classList = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+};
 
-     toggleBtnIcon.classList = isOpen
-     ? "fa-solid fa-xmark" : "fa-solid fa-bars"
- }
+//Dark Mode
+const dark = document.getElementById("dark");
+dark.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
 
- //Dark Mode 
- const dark = document.getElementById("dark");
- dark.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode")
- })
+//Slider Donut
+let i = 0;
+let images = [];
+let time = 1000;
 
- //Slider Donut
-let i = 0; 			
-let images = [];	
-let time = 1000;	
-	 
 // Image List
 images[0] = "img/Donuts-with-chocolate-filling.jpg";
 images[1] = "img/Donut-in-the-kitchen.jpg";
 images[2] = "img/Donut-for-breakfast.jpg";
 images[3] = "img/Donuts-shop.jpg";
 
+function changeImg() {
+  const index = i % images.length;
+  document.slide.src = images[index];
 
-function changeImg(){
-	document.slide.src = images[i];
+  i = index + 1;
 
-	
-	if(i < images.length - 1){
-	 
-	  i++; 
-	} else { 
-		
-		i = 0;
-	}
-
-	
-	setTimeout("changeImg()", time);
+  setTimeout(changeImg, time);
 }
 
+window.onload = changeImg;
 
-window.onload=changeImg;
-
- //Slider Testimonial
- let testSlide = document.querySelectorAll('.testItem');
- let dots = document.querySelectorAll('.dot');
+//Slider Testimonial
+let testSlide = document.querySelectorAll(".testItem");
+let dots = document.querySelectorAll(".dot");
 
 let counter = 0;
 
+function switchTest(currentTest) {
+  currentTest.classList.add("active");
+  let testId = currentTest.getAttribute("attr");
+  if (testId > counter) {
+    testSlide[counter].style.animation = "next1 0.5s ease-in forwards";
+    counter = testId;
+    testSlide[counter].style.animation = "next2 0.5s ease-in forwards";
+  } else if (testId == counter) {
+    return;
+  } else {
+    testSlide[counter].style.animation = "prev1 0.5s ease-in forwards";
+    counter = testId;
+    testSlide[counter].style.animation = "prev2 0.5s ease-in forwards";
+  }
+  indicators();
+}
 
- function switchTest(currentTest){
-     currentTest.classList.add('active');
-     let testId = currentTest.getAttribute('attr');
-     if(testId > counter){
-         testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
-         counter = testId;
-         testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
-     }
-     else if(testId == counter){return;}
-     else{
-         testSlide[counter].style.animation = 'prev1 0.5s ease-in forwards';
-         counter = testId;
-         testSlide[counter].style.animation = 'prev2 0.5s ease-in forwards';
-     }
-     indicators();
- }
+function indicators() {
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  dots[counter].className += " active";
+}
 
- function indicators(){
-     for(i = 0; i < dots.length; i++){
-         dots[i].className = dots[i].className.replace(' active', '');
-     }
-     dots[counter].className += ' active';
- }
+function slideNext() {
+  testSlide[counter].style.animation = "next1 0.5s ease-in forwards";
+  if (counter >= testSlide.length - 1) {
+    counter = 0;
+  } else {
+    counter++;
+  }
+  testSlide[counter].style.animation = "next2 0.5s ease-in forwards";
+  indicators();
+}
+function autoSliding() {
+  deleteInterval = setInterval(timer, 4000);
+  function timer() {
+    slideNext();
+    indicators();
+  }
+}
+autoSliding();
 
- 
- function slideNext(){
-     testSlide[counter].style.animation = 'next1 0.5s ease-in forwards';
-     if(counter >= testSlide.length - 1){
-         counter = 0;
-     }
-     else{
-         counter++;
-     }
-     testSlide[counter].style.animation = 'next2 0.5s ease-in forwards';
-     indicators();
- }
- function autoSliding(){
-     deleteInterval = setInterval(timer, 4000);
-     function timer(){
-         slideNext();
-         indicators();
-     }
- }
- autoSliding();
+const container = document.querySelector(".indicators");
+container.addEventListener("mouseover", pause);
+function pause() {
+  clearInterval(deleteInterval);
+}
 
+container.addEventListener("mouseout", autoSliding);
 
- const container = document.querySelector('.indicators');
- container.addEventListener('mouseover', pause);
- function pause(){
-     clearInterval(deleteInterval);
- }
-
- container.addEventListener('mouseout', autoSliding);
-
- 
- //Contact-form validation
+//Contact-form validation
 
 const contactForm = document.querySelector("#contact-form");
 const messageInput = document.querySelector("#message-input");
@@ -175,17 +159,19 @@ contactForm.addEventListener("submit", (e) => {
   validateInputs();
 });
 
- //FAG
- const faqs = document.querySelectorAll(".faq");
+//FAG
+const faqs = document.querySelectorAll(".faq");
 
- faqs.forEach(faq => {
-     faq.addEventListener("click", () => {
-         faq.classList.toggle("active");
-     })
- })
+faqs.forEach((faq) => {
+  faq.addEventListener("click", () => {
+    faq.classList.toggle("active");
+  });
+});
 
- // Back to the Top Button
-window.onscroll = function() {scrollFunction()};
+// Back to the Top Button
+window.onscroll = function () {
+  scrollFunction();
+};
 
 function scrollFunction() {
   let button = document.getElementById("topBtn");
@@ -196,17 +182,6 @@ function scrollFunction() {
   }
 }
 
-
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' }); 
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
-
-
-
- 
- 
- 
- 
-
- 
