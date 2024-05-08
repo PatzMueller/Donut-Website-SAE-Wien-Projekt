@@ -164,9 +164,9 @@ contactForm.addEventListener("submit", (e) => {
 });
 
 // Handling validation on changing inputs
-fullNameInput.addEventListener("input", validateFullName);
-emailInput.addEventListener("input", validateEmail);
-messageInput.addEventListener("input", validateMessage);
+fullNameInput.addEventListener("focusout", validateFullName);
+emailInput.addEventListener("focusout", validateEmail);
+messageInput.addEventListener("focusout", validateMessage);
 
 //FAG
 const faqs = document.querySelectorAll(".faq");
